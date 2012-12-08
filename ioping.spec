@@ -27,3 +27,10 @@ to how ping(1) does for network latency.
 %defattr(644,root,root,755)
 %{_mandir}/man1/ioping.1*
 %attr(755,root,root) %{_bindir}/*
+
+
+%changelog
+* Fri Jan 13 2012 Alexander Khrukin <akhrukin@mandriva.org> 0.6-1
++ Revision: 760626
+- imported package ioping
+
