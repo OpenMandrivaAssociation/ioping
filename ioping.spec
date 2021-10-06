@@ -1,29 +1,29 @@
 Summary:	simple disk I/O latency measuring tool
 Name:		ioping
-Version:	0.6
-Release:	10
+Version:	1.2
+Release:	1
 License:	GPLv3+
 Group:		System/Configuration/Hardware
-Url:		http://code.google.com/p/ioping/
-Source0:	http://ioping.googlecode.com/files/%{name}-%{version}.tar.gz
+Url:		https://github.com/koct9i/ioping
+Source0:	https://github.com/koct9i/ioping/archive/v%{version}/%{name}-%{version}.tar.gz
 
 %description
 This tool lets you monitor I/O latency in real time, in a way similar
 to how ping(1) does for network latency.
 
-
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%make
+export CFLAGS="-Wextra -pedantic -funroll-loops -ftree-vectorize %{optflags}"
+export LDFLAGS="%{build_ldflags}"
+%make_build
 
 %install
-%makeinstall_std \
-	PREFIX="%{_prefix}" \
-	DESTDIR=%{buildroot}
+%make_install PREFIX=%{_prefix}
 
 %files
-%{_bindir}/*
-%{_mandir}/man1/ioping.1*
-
+%doc changelog README.md
+%license LICENSE
+%{_bindir}/ioping
+%doc %{_mandir}/man1/ioping.1*
