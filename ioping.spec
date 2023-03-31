@@ -1,7 +1,7 @@
 Summary:	simple disk I/O latency measuring tool
 Name:		ioping
 Version:	1.3
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		System/Configuration/Hardware
 Url:		https://github.com/koct9i/ioping
