@@ -7,6 +7,7 @@ Group:		System/Configuration/Hardware
 Url:		https://github.com/koct9i/ioping
 Source0:	https://github.com/koct9i/ioping/archive/v%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	make
 %description
 This tool lets you monitor I/O latency in real time, in a way similar
 to how ping(1) does for network latency.
